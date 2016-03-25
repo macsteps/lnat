@@ -12,6 +12,7 @@ gem 'turbolinks',               '~> 2.5', '>= 2.5.3'
 gem 'jbuilder',                 '~> 2.4', '>= 2.4.1'
 gem 'sdoc',                     '0.4.0', group: :doc
 gem 'pg',                       '~> 0.18.4'
+gem 'devise',                   '~> 3.5', '>= 3.5.6'
 
 group :development, :test do
   gem 'byebug',                 '~> 8.2', '>= 8.2.2'
