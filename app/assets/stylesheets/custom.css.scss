@@ -48,6 +48,10 @@ body {
   }
 }
 
+.divider {
+  color: white;
+}
+
 .dropdown:focus:not(:hover) {
   background-color: $dark-brown;
 }
