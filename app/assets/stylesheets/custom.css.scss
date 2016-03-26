@@ -1,7 +1,10 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-/* Mixins */
+/* Mixins, variables */
+
+$dark-brown: #663300;
+$light-brown: #996633;
 
 @mixin box_sizing {
   -moz-box-sizing:    border-box;
@@ -31,8 +34,11 @@ body {
       a {
         color: white;
         &:hover {
-          background-color: transparent;
+          background-color: $dark-brown;
           color: #ff9900;
+        }
+        &:visited {
+          background-color: $dark-brown;
         }
       }
     }
@@ -40,13 +46,25 @@ body {
 }
 
 .navbar-logo {
-  background-color: #663300;
+  background-color: $dark-brown;
   text-align: right;
   padding-right: 50px;
 }
 
 .navbar-main {
-  background-color: #996633;
+  background-color: $light-brown;
+}
+
+.dropdown-bg {
+  background-color: $dark-brown;
+}
+
+.dropdown:hover {
+  background-color: none;
+}
+
+ul li:visited {
+  background-color: $dark-brown;
 }
 
 /* Footer */
@@ -110,6 +128,12 @@ input {
   width: 100%;
   margin-top: 45px;
   @include box_sizing;
+}
+
+.alert {
+  border: 1px solid;
+  padding: 8px 35px 8px 14px;
+  text-align: center;
 }
 
 /* typography */
