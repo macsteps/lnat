@@ -40,9 +40,16 @@ body {
         &:visited {
           background-color: $dark-brown;
         }
+        &:active {
+          background-color: $dark-brown;
+        }
       }
     }
   }
+}
+
+.dropdown:focus:not(:hover) {
+  background-color: $dark-brown;
 }
 
 .navbar-logo {
@@ -55,15 +62,14 @@ body {
   background-color: $light-brown;
 }
 
-.dropdown-bg {
+.navbar .nav li.dropdown.open > .dropdown-toggle,
+.navbar .nav li.dropdown.active > .dropdown-toggle,
+.navbar .nav li.dropdown.open.active > .dropdown-toggle
+{
   background-color: $dark-brown;
 }
 
-.dropdown:hover {
-  background-color: none;
-}
-
-ul li:visited {
+.dropdown-bg {
   background-color: $dark-brown;
 }
 
