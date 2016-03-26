@@ -1,0 +1,149 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+/* Mixins */
+
+@mixin box_sizing {
+  -moz-box-sizing:    border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing:         border-box;
+}
+
+/* Universal */
+
+#logo {
+  float: left;
+  padding: 15px 15px;
+}
+
+body {
+  padding-top: 120px;
+}
+
+.navbar {
+  text-align: center;
+  .nav {
+  	float:none;
+    li {
+    	display:inline-block;
+    	float:none;
+    	vertical-align:middle;
+      a {
+        color: white;
+        &:hover {
+          background-color: transparent;
+          color: #ff9900;
+        }
+      }
+    }
+  }
+}
+
+.navbar-logo {
+  background-color: #663300;
+  text-align: right;
+  padding-right: 50px;
+}
+
+.navbar-main {
+  background-color: #996633;
+}
+
+/* Footer */
+
+footer {
+  margin-top: 45px;
+  padding-top: 5px;
+  border-top: 1px solid $gray-light;
+  color: $gray-light;
+
+  a {
+    color: $gray;
+  }
+
+  a:hover {
+    color: $gray-darker;
+  }
+
+  small {
+    float: left;
+  }
+
+  ul {
+    float: right;
+    list-style: none;
+    li {
+      float: left;
+      margin-left: 15px;
+    }
+  }
+}
+
+/* Forms */
+
+input, textarea, select, .uneditable-input {
+  border: 1px solid #bbb;
+  width: 100%;
+  margin-bottom: 15px;
+  @include box-sizing;
+}
+
+input {
+  height: auto !important;
+}
+
+.checkbox {
+  margin-top: -10px;
+  margin-bottom: 10px;
+  margin-left: 18px;
+  span {
+    margin-left: 5px;
+    font-weight: normal;
+  }
+}
+
+/* miscellaneous */
+
+.debug_dump {
+  clear: both;
+  float: left;
+  width: 100%;
+  margin-top: 45px;
+  @include box_sizing;
+}
+
+/* typography */
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1;
+}
+
+h1 {
+  font-size: 3em;
+  letter-spacing: -2px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 1.2em;
+  letter-spacing: -1px;
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight: normal;
+  color: #777;
+}
+
+h3 {
+  font-size: 1.1em;
+  letter-spacing: -1px;
+  margin-bottom: 30px;
+  text-align: left;
+  font-weight: normal;
+  color: #777;
+}
+
+p {
+  font-size: 1.1em;
+  line-height: 1.7em;
+}
