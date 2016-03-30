@@ -4,10 +4,13 @@ class MarkdownBlogController < ApplicationController
 
   def index
     posts = Dir.glob("#{Rails.root}/public/blog/*/*/*.md")
-    @content = []
+    @content = Array.new
     posts.each do |post|
       discard, slug = post.split(/lnat_app\//)
-      @content << slug
+      slug_fields = []
+      slug_fields = slug.match(/(\w+?\/\w+?\/)(\w+?)\/(\d{4})\/(\d{4})-(\d{2})-(\d{2})-(\S+?)\.md/)
+      title = slug_fields[7].split(/-/).map(&:capitalize).join(' ')
+      @content << [title, slug]
     end
   end
 
