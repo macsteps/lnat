@@ -1,0 +1,5 @@
+<h1>Blog posts</h1>
+
+<% @content.each do |post_name| %>
+  <p><%= link_to post_name, controller: "markdown_blog", action: "show", id: post_name %></p>
+<% end %>

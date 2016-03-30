@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   devise_for :users
   root                       'static_pages#home'
   get 'settings'          => 'static_pages#settings'
+  get 'blog/'             => 'markdown_blog#index'
+  get '/blog/[:id]'       => 'markdown_blog#show', id: /.+/
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
