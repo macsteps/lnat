@@ -26,6 +26,13 @@ $light-brown: #996633;
 
 .btn-no-border {
   border: 0 none;
+  background-color: $dark-brown;
+  &:hover {
+    background-color: $dark-brown;
+  }
+  &:visited {
+    background-color: $dark-brown;
+  }
 }
 
 body {
@@ -100,8 +107,10 @@ body {
 /* Blog */
 
 blog-main-img {
-  float: right;
-  height: 200px;
+  img {
+    float: right;
+    height: 200px;
+  }
 }
 
 /* Footer */
