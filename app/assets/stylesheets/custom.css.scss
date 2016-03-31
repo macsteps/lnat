@@ -19,12 +19,16 @@ $light-brown: #996633;
   padding: 15px 15px;
 }
 
+.banner {
+  float:left;
+  padding-bottom: 50px;
+}
+
 body {
   padding-top: 120px;
 }
 
 .navbar {
-  text-align: center;
   .nav {
   	float:none;
     li {
@@ -34,22 +38,11 @@ body {
       a {
         color: white;
         &:hover {
-          background-color: $dark-brown;
           color: #ff9900;
-        }
-        &:visited {
-          background-color: $dark-brown;
-        }
-        &:active {
-          background-color: $dark-brown;
         }
       }
     }
   }
-}
-
-.divider {
-  color: white;
 }
 
 .dropdown:focus:not(:hover) {
@@ -59,12 +52,35 @@ body {
 .navbar-logo {
   background-color: $dark-brown;
   text-align: right;
-  padding-right: 50px;
+  li {
+    a {
+      &:hover {
+        background-color: $dark-brown;
+      }
+      &:visited {
+        background-color: $dark-brown;
+      }
+    }
+  }
 }
 
 .navbar-main {
+  text-align: center;
   background-color: $light-brown;
+  max-height: 30px;
+  li {
+    a {
+      &:hover {
+        background-color: $light-brown;
+      }
+      &:visited {
+        background-color: $light-brown;
+      }
+    }
+  }
 }
+
+.navbar-nav > li > a { padding-top: 5px !important; padding-bottom: 5px !important; }
 
 .navbar .nav li.dropdown.open > .dropdown-toggle,
 .navbar .nav li.dropdown.active > .dropdown-toggle,
@@ -75,6 +91,13 @@ body {
 
 .dropdown-bg {
   background-color: $dark-brown;
+}
+
+/* Blog */
+
+blog-main-img {
+  float: right;
+  height: 200px;
 }
 
 /* Footer */

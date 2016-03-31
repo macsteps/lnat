@@ -1,3 +1,5 @@
+<div class="blog-main-img"><img src="/assets/blog/2016/young-coco-on-stem-963.jpg" align="middle" /></div>
+
 ## The main reasons to use coconut oil in the diet:
 
 1. Saturated fat is necessary for good health.

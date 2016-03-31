@@ -7,6 +7,7 @@ class MarkdownBlogController < ApplicationController
     @content = Array.new
     posts.each do |post|
       discard, slug = post.split(/lnat_app\//)
+      slug.to_s
       slug_fields = []
       slug_fields = slug.match(/(\w+?\/\w+?\/)(\w+?)\/(\d{4})\/(\d{4})-(\d{2})-(\d{2})-(\S+?)\.md/)
       title = slug_fields[7].split(/-/).map(&:capitalize).join(' ')
