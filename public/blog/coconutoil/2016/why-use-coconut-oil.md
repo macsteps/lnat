@@ -1,4 +1,4 @@
-<div class="blog-main-img"><img src="/assets/blog/2016/young-coco-on-stem-963.jpg" align="middle" /></div>
+<div class="row col-md-offset-3 blog-main-img"><img src="/assets/blog/2016/young-coco-on-stem-963.jpg" /></div>
 
 ## The main reasons to use coconut oil in the diet:
 

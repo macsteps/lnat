@@ -1,5 +1,5 @@
 <h1>Blog posts</h1>
 
 <% @content.each do |title, slug| %>
-  <p><%= link_to title, controller: "markdown_blog", action: "show", id: slug %></p>
+  <p><%= link_to title, controller: "markdown_blog", action: "show", path: slug %></p>
 <% end %>

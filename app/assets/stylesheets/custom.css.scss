@@ -106,10 +106,10 @@ body {
 
 /* Blog */
 
-blog-main-img {
+.blog-main-img {
   img {
-    float: right;
-    height: 200px;
+    height: 400px;
+    margin: 0 auto;
   }
 }
 
@@ -185,6 +185,7 @@ input {
 /* typography */
 
 h1, h2, h3, h4, h5, h6 {
+  font-family: "Arial Black";
   line-height: 1;
 }
 
@@ -197,7 +198,6 @@ h1 {
 
 h2 {
   font-size: 1.2em;
-  letter-spacing: -1px;
   margin-bottom: 30px;
   text-align: center;
   font-weight: normal;
@@ -214,6 +214,7 @@ h3 {
 }
 
 p {
+  font-family: "Arial";
   font-size: 1.1em;
   line-height: 1.7em;
 }
