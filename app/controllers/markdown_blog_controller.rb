@@ -7,16 +7,9 @@ class MarkdownBlogController < ApplicationController
     @content = Array.new
     posts.each do |post|
       discard, slug = post.split(/lnat_app\//)
-      slug_fields = []
-      slug_fields = slug.match(/(\w+?\/)(\w+?)\/(\d{4})\/(\S+?\.md)/)
-      category = slug_fields[2]
-      year = slug_fields[3]
-      file_name = slug_fields[4]
-      title = file_name.split(/-/).map(&:capitalize).join(' ').gsub(/\.md$/, '')
-      slug_final = "public/#{category}/#{year}/#{file_name}"
-      slug_final.html_safe
-      logger.debug "slug final: #{slug_final}"
-      @content << [title, slug_final.html_safe]
+      title, slug_final = get_slug_final(slug)
+      logger.debug "Slug final: #{slug_final}"
+      @content << [title, slug_final]
     end
   end
 
@@ -25,5 +18,18 @@ class MarkdownBlogController < ApplicationController
     md_content = File.read(file_path)
     @content = md_to_html(md_content)
   end
+
+  private
+
+    def get_slug_final(slug)
+      slug_fields = []
+      slug_fields = slug.match(/(\w+?\/)(\w+?)\/(\d{4})\/(\S+?\.md)/)
+      category = slug_fields[2]
+      year = slug_fields[3]
+      file_name = slug_fields[4]
+      title = file_name.split(/-/).map(&:capitalize).join(' ').gsub(/\.md$/, '')
+      slug_final = "public/#{category}/#{year}/#{file_name}"
+      return title, slug_final
+    end
 
 end
