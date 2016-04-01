@@ -8,7 +8,6 @@ class MarkdownBlogController < ApplicationController
     posts.each do |post|
       discard, slug = post.split(/lnat_app\//)
       title, slug_final = get_slug_final(slug)
-      logger.debug "Slug final: #{slug_final}"
       @content << [title, slug_final]
     end
   end
