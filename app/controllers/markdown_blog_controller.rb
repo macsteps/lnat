@@ -10,6 +10,7 @@ class MarkdownBlogController < ApplicationController
       title, slug_final = get_slug_final(slug)
       first_five = File.foreach(post).first(1)
       first_five = first_five.join("").to_s.gsub(/col-md-offset-3 blog-main-img/, 'blog-excerpt-img')
+      next if first_five.match(/^draft/)
       excerpt = md_to_html(first_five)
       logger.debug "EXCERPT:#{excerpt}"
       @content << [title, slug_final, excerpt]
