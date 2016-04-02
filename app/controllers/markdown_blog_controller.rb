@@ -8,7 +8,11 @@ class MarkdownBlogController < ApplicationController
     posts.each do |post|
       discard, slug = post.split(/lnat_app\//)
       title, slug_final = get_slug_final(slug)
-      @content << [title, slug_final]
+      first_five = File.foreach(post).first(1)
+      first_five = first_five.join("").to_s.gsub(/col-md-offset-3 blog-main-img/, 'blog-excerpt-img')
+      excerpt = md_to_html(first_five)
+      logger.debug "EXCERPT:#{excerpt}"
+      @content << [title, slug_final, excerpt]
     end
   end
 

@@ -1,5 +1,13 @@
-<h1>Blog posts</h1>
+<h1>Blog</h1>
 
-<% @content.each do |title, slug| %>
-  <p><%= link_to title, controller: "markdown_blog", action: "show", path: slug %></p>
+<% @content.each do |title, slug, excerpt| %>
+  <div class="row blog-excerpt">
+    <div class="col-md-2 col-md-offset-4">
+      <h2 class="blog-excerpt-title"><%= link_to title, controller: "markdown_blog", action: "show", path: slug %></h2>
+    </div>
+    <div class="col-md-6">
+      <%= excerpt %>
+      <p><small><%= link_to "Read more >", controller: "markdown_blog", action: "show", path: slug %></small></p>
+    </div>
+  </div>
 <% end %>
