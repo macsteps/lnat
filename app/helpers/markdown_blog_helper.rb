@@ -6,7 +6,6 @@ module MarkdownBlogHelper
       link_attributes: { rel: 'nofollow', target: "_blank" },
       space_after_headers: true,
       fenced_code_blocks: true,
-      escape_html: false
     }
 
     extensions = {
