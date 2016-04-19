@@ -11,10 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160326023822) do
+ActiveRecord::Schema.define(version: 20160419142806) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "carts", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "item_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "carts", ["item_id"], name: "index_carts_on_item_id", using: :btree
+  add_index "carts", ["user_id"], name: "index_carts_on_user_id", using: :btree
 
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string   "slug",                      null: false
@@ -30,6 +40,26 @@ ActiveRecord::Schema.define(version: 20160326023822) do
   add_index "friendly_id_slugs", ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type", using: :btree
   add_index "friendly_id_slugs", ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id", using: :btree
   add_index "friendly_id_slugs", ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type", using: :btree
+
+  create_table "items", force: :cascade do |t|
+    t.integer  "quantity"
+    t.integer  "product_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "cart_id"
+  end
+
+  add_index "items", ["cart_id"], name: "index_items_on_cart_id", using: :btree
+  add_index "items", ["product_id"], name: "index_items_on_product_id", using: :btree
+
+  create_table "products", force: :cascade do |t|
+    t.string   "name"
+    t.text     "description"
+    t.integer  "quantity"
+    t.decimal  "price",       precision: 8, scale: 2
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
+  end
 
   create_table "spree_addresses", force: :cascade do |t|
     t.string   "firstname"
@@ -1025,4 +1055,8 @@ ActiveRecord::Schema.define(version: 20160326023822) do
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   add_index "users", ["unlock_token"], name: "index_users_on_unlock_token", unique: true, using: :btree
 
+  add_foreign_key "carts", "items"
+  add_foreign_key "carts", "users"
+  add_foreign_key "items", "carts"
+  add_foreign_key "items", "products"
 end
