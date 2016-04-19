@@ -14,6 +14,7 @@ gem 'sdoc',                     '0.4.0', group: :doc
 gem 'pg',                       '~> 0.18.4'
 gem 'devise',                   '~> 3.5', '>= 3.5.6'
 gem 'redcarpet',                '~> 3.3', '>= 3.3.4'
+gem 'factory_girl_rails',       '~> 4.7'
 
 group :development, :test do
   gem 'byebug',                 '~> 8.2', '>= 8.2.2'
