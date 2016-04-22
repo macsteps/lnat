@@ -19,8 +19,6 @@ group :development, :test do
   gem 'byebug',                 '~> 8.2', '>= 8.2.2'
   gem 'web-console',            '~> 2.0', '<= 2.0.99'
   gem 'spring',                 '~> 1.6', '>= 1.6.4'
-  gem 'rspec-rails',            '~> 3.4', '>= 3.4.2'
-  gem 'factory_girl_rails',     '~> 4.7'
 end
 
 group :test do
