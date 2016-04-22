@@ -1,0 +1,5 @@
+sencha:
+  name: "Sencha Tea"
+  description: "A delightful, daily tea"
+  quantity: 2
+  price: 4.99
