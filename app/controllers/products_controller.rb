@@ -3,6 +3,10 @@ class ProductsController < ApplicationController
     @products = Product.all
   end
 
+  def show
+    @product = Product.find(params[:id])
+  end
+
   def new
   end
 
@@ -18,6 +22,4 @@ class ProductsController < ApplicationController
   def destroy
   end
 
-  def show
-  end
 end

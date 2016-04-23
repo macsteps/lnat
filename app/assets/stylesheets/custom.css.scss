@@ -198,6 +198,18 @@ input {
   text-align: center;
 }
 
+/* products */
+
+.products {
+  margin: 30px;
+  border: 1px solid $light-brown;
+  padding: 5px;
+}
+
+.product {
+  padding: 100px 50px 50px 50px;
+}
+
 /* typography */
 
 h1, h2, h3, h4, h5, h6 {

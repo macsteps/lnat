@@ -1,6 +1,12 @@
-<h1>Products</h1>
+<h1>Shop</h1>
+<% @products.each_slice(3) do |products| %>
   <div class="row">
-    <ul class="products">
-      <%= render @products %>
-    </ul>
+    <% products.each do |product| %>
+      <div class="col-md-3 products">
+        <%= link_to product.name, product_path(product.id) %><br>
+        <%= product.description %><br>
+        <%= product.price %><br>
+      </div>
+    <% end %>
   </div>
+<% end %>
