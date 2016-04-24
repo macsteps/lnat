@@ -1,5 +1,4 @@
 class Product < ActiveRecord::Base
-  belongs_to :item
   validates :name, presence: true
   validates :quantity,  presence: true,
                         numericality: { only_integer: true,
