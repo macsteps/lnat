@@ -1,9 +1,5 @@
-FROM ruby:2.2
-
-RUN apt-get update -qq && apt-get install -y build-essential nodejs
-
-# throw errors if Gemfile has been modified since Gemfile.lock
-RUN bundle config --global frozen 1
+FROM centurylink/alpine-rails
+MAINTAINER Scott Stephenson <macsteps@gmail.com>
 
 ENV APP_HOME /usr/src/lnat_app
 
@@ -15,5 +11,3 @@ COPY Gemfile.lock $APP_HOME
 RUN bundle install
 
 COPY . $APP_HOME
-
-CMD ["rails", "server", "--binding", "0.0.0.0”]
